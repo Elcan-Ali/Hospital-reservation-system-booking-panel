@@ -1,0 +1,270 @@
+:root {
+    --black: #292D32;
+    --gray: #626C76;
+    --gray-2: #8F9CA7;
+    --green: #53D56C;
+    --green-2: #4FBF65;
+    --purple: #6C70DC;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-items-center {
+    display: flex;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #8E53E4 0%, #4B22B9 100%);
+}
+
+#booking-panel {
+    height: 560px;
+}
+
+#menu {
+    background-color: var(--black);
+    height: 100%;
+    padding: 40px 0 75px;
+
+}
+
+#menu ul {
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 70px;
+    gap: 25px;
+    height: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+}
+
+.menu-item {
+    gap: 12px;
+}
+
+.menu-item p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.menu-item.active p {
+    color: var(--green);
+}
+
+.menu-item-order {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    font-size: 12px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: var(--gray);
+}
+
+.menu-item.active .menu-item-order {
+    background-color: var(--green);
+}
+
+#stepper {
+    width: 750px;
+    background: #F5F7FA;
+    position: relative;
+}
+
+#stepper-header {
+    padding: 19px 30px;
+    border-bottom: 2px solid #E3EAF3;
+}
+
+#stepper-header h3 {
+    color: var(--black);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#stepper-page {
+    padding: 25px 30px 0;
+    overflow-y: auto;
+    height: 75%;
+}
+
+#stepper-page::-webkit-scrollbar {
+    appearance: none;
+    width: 5px;
+    border-radius: 10px;
+    border: 1px solid var(--purple);
+}
+
+#stepper-page::-webkit-scrollbar-thumb {
+
+    border-radius: 30px;
+    background-color: var(--purple);
+}
+
+.staff-item,
+.service-item {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+}
+
+.staff-item img,
+.service-item img {
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.staff-item h3,
+.service-item h3 {
+    color: var(--black);
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.staff-item p,
+.service-item p {
+    color: #828F9A;
+    font-size: 12px;
+    line-height: 19px;
+}
+
+.service-item span {
+    color: var(--green-2);
+    font-size: 26px;
+    font-weight: 500;
+}
+
+#date-time {
+    flex-wrap: wrap;
+    padding: 10px 0;
+    gap: 15px;
+}
+
+#date {
+    width: 55%;
+}
+
+#calendar {
+
+    margin-top: 20px;
+    padding: 10px 10px 5px;
+    background-color: #fff;
+    width: 100%;
+}
+
+#date #calendar-top {
+    border-bottom: 1px solid#E3EAF3;
+    padding-bottom: 5px;
+
+}
+
+#date #calendar-bottom {
+    padding: 12px 0 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#date #calendar .week-day {
+    width: calc(100% / 7);
+    color: #C8C9CC;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    padding: 10px 10px 5px;
+}
+
+#date #calendar .month-day {
+    width: calc((100% - 60px) / 7);
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 15px;
+}
+
+#date #calendar .month-day div {
+    background-color: #eceff2;
+    height: 40px;
+    color: #AAACAF;
+}
+
+
+#time {
+    width: calc(45% - 15px);
+}
+
+#time h3,
+#date h3 {
+    text-align: center;
+}
+
+#time #select-time {
+    background-color: #fff;
+}
+
+#time #select-time-top {
+    margin-top: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #E3EAF3;
+}
+
+#time #select-time-bottom {
+    min-height: 266px
+}
+
+#time #select-time-top h3 {
+    color: #6C70DC;
+    font-size: 14px;
+}
+
+
+#stepper-footer {
+    display: flex;
+    justify-content: end;
+    width: calc(100% - 30px);
+    position: absolute;
+    bottom: 0;
+    padding: 20px 30px;
+}
+
+.btn {
+    height: 38px;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 2px;
+    text-transform: uppercase;
+    border: 1px solid #E3EAF3;
+}
+
+#btn-back {
+    color: var(--gray-2);
+    position: absolute;
+    left: 00px;
+}
+
+#btn-next {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--purple);
+    color: #fff;
+}

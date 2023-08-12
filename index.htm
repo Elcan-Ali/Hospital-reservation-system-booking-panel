@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style/reset.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+
+<body>
+    <div id="booking-panel" class="flex">
+        <div id="menu">
+            <ul class="flex">
+                <li class="menu-item flex-items-center active">
+                    <div class="menu-item-order flex-center">1</div>
+                    <p>Staff</p>
+                </li>
+                <li class="menu-item flex-items-center">
+                    <div class="menu-item-order flex-center">2</div>
+                    <p>Service</p>
+                </li>
+                <li class="menu-item flex-items-center">
+                    <div class="menu-item-order flex-center">3</div>
+                    <p>Date & Time</p>
+                </li>
+                <li class="menu-item flex-items-center">
+                    <div class="menu-item-order flex-center">4</div>
+                    <p>Confirmation</p>
+                </li>
+            </ul>
+        </div>
+        <div id="stepper">
+            <div id="stepper-header" class="flex-between">
+                <h3>Staff</h3>
+                <img src="./assets/img/cross.svg" alt="cross">
+            </div>
+
+            <div id="stepper-page">
+                <div id="staff"></div>
+                <div id="services"></div>
+                <div id="date-time" class="flex">
+                    <div id="date">
+                        <h3>August</h3>
+                        <div id="calendar">
+                            <div id="calendar-top" class="flex">
+
+                            </div>
+                            <div id="calendar-bottom" class="flex"></div>
+
+                        </div>
+                    </div>
+
+                    <div id="time">
+                        <h3>Time</h3>
+                        <div id="select-time">
+                            <div id="select-time-top">
+                                <h3>Select date</h3>
+                            </div>
+                            <div id="select-time-bottom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="stepper-footer">
+                    <button id="btn-back" class="btn flex-center">Back</button>
+                    <button id="btn-next" class="btn flex-center">Next</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <script>
+            const weeksDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+            const calendarTop = document.querySelector("#calendar-top");
+            const calendarBottom = document.querySelector("#calendar-bottom");
+
+            calendarTop.innerHTML = weeksDay.reduce((kod, item) => kod += `<div class="week-day">${item}</div>`, "")
+            calendarBottom.innerHTML = Array(31).fill(null).reduce((kod, item, index) => kod += `<div class="month-day">
+            <div class="flex-center">${index}</div></div>`, "")
+
+
+        </script>
+
+        <script type="module" src="./assets/js/index.js"></script>
+</body>
+
+</html>
