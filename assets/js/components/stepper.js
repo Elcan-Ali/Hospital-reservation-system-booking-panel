@@ -1,6 +1,6 @@
 export default class Stepper {
     constructor(steps) {
-        this.step = 0
+        this.step = 2
         this.steps = Array.from(steps)
     }
     show() {
@@ -15,4 +15,5 @@ export default class Stepper {
         if (this.step > 0) this.step -= 1
         this.show()
     }
+    
 }

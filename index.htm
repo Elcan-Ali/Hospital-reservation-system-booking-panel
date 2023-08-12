@@ -43,11 +43,13 @@
                 <div id="date-time-wrapper" class="page">
                     <div id="date-time" class="flex">
                         <div id="date">
-                            <h3>August</h3>
+                            <div class="month-year flex-items-center" >
+                               
+                            </div>
                             <div id="calendar">
-                                <div id="calendar-top" class="flex">
+                                <div class="flex calendar-top">
                                 </div>
-                                <div id="calendar-bottom" class="flex"></div>
+                                <div class="flex calendar-bottom"></div>
                             </div>
                         </div>
                         <div id="time">
@@ -140,14 +142,14 @@
 
 
         <script>
-            const weeksDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+            // const weeksDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
-            const calendarTop = document.querySelector("#calendar-top");
-            const calendarBottom = document.querySelector("#calendar-bottom");
+            // const calendarTop = document.querySelector(".calendar-top");
+            // const calendarBottom = document.querySelector(".calendar-bottom");
 
-            calendarTop.innerHTML = weeksDay.reduce((kod, item) => kod += `<div class="week-day">${item}</div>`, "")
-            calendarBottom.innerHTML = Array(31).fill(null).reduce((kod, item, index) => kod += `<div class="month-day">
-            <div class="flex-center">${index}</div></div>`, "")
+            // calendarTop.innerHTML = weeksDay.reduce((kod, item) => kod += `<div class="week-day">${item}</div>`, "")
+            // calendarBottom.innerHTML = Array(31).fill(null).reduce((kod, item, index) => kod += `<div class="month-day">
+            // <div class="flex-center">${index+1}</div></div>`, "")
 
         </script>
 

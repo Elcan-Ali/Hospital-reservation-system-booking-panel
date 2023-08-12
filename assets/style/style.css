@@ -172,6 +172,10 @@ body {
     width: 55%;
 }
 
+.month-year {
+    gap: 10px
+}
+
 #calendar {
 
     margin-top: 20px;
@@ -180,13 +184,13 @@ body {
     width: 100%;
 }
 
-#date #calendar-top {
+#date .calendar-top {
     border-bottom: 1px solid#E3EAF3;
     padding-bottom: 5px;
 
 }
 
-#date #calendar-bottom {
+#date .calendar-bottom {
     padding: 12px 0 10px;
     flex-wrap: wrap;
     gap: 10px;
