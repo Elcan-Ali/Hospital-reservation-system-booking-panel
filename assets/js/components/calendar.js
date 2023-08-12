@@ -3,10 +3,8 @@ class Calendar {
         this.today = new Date()
         this.year = this.today.getFullYear()
         this.month = this.today.getMonth()
-
         this.firstDay = new Date(this.year, this.month, 1)
         this.LastDay = new Date(this.year, this.month + 1, 0)
-
         this.todayDate = this.today.getDate()
         this.firstDate = this.firstDay.getDate()
         this.LastDate = this.LastDay.getDate()

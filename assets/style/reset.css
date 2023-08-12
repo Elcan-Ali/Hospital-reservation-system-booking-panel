@@ -4,6 +4,7 @@
     margin: 0;
     border: 0;
     padding: 0;
+    outline: 0;
     font: inherit;
     line-height: 1;
     font-size: 100%;
@@ -14,6 +15,10 @@
 
 a {
     text-decoration: none;
+}
+
+span,
+a {
     display: inline-block;
 }
 

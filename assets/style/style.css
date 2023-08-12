@@ -5,6 +5,7 @@
     --green: #53D56C;
     --green-2: #4FBF65;
     --purple: #6C70DC;
+    --red: #EF264D
 }
 
 .flex {
@@ -118,6 +119,14 @@ body {
 
     border-radius: 30px;
     background-color: var(--purple);
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
 }
 
 .staff-item,
@@ -234,13 +243,78 @@ body {
     font-size: 14px;
 }
 
+#confirm-form {
+    flex-wrap: wrap;
+    gap: 25px 20px
+}
+
+#confirm-form .confirm-form-item h3 {
+    color: #292D32;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#confirm-form .confirm-form-item h3 span {
+    color: var(--red);
+}
+
+#confirm-form .confirm-form-item {
+    width: calc((100% - 20px) / 2);
+    flex-shrink: 0;
+}
+
+#confirm-form .confirm-input {
+    background-color: #fff;
+}
+
+#confirm-form .confirm-input input {
+    width: 100%;
+    height: 46px;
+    padding: 0 10px;
+}
+
+#confirm-note {
+    padding-top: 25px;
+}
+
+#confirm-note-title {
+    font-size: 14px;
+    color: var(--black);
+    margin-bottom: 1px;
+}
+
+#confirm-note ul {
+    background-color: #fff;
+    padding: 20px 26px 5px;
+}
+
+#confirm-note ul li {
+    color: #111;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+#confirm-note ul li span {
+    margin-right: 12px;
+    color: var(--purple);
+    font-size: 14px;
+}
+
+#confirm-note ul li #total {
+    color: #4FBF65;
+    font-weight: 500;
+
+}
 
 #stepper-footer {
     display: flex;
     justify-content: end;
-    width: calc(100% - 30px);
+    width: 100%;
     position: absolute;
+    background-color: #fff;
     bottom: 0;
+    left: 0;
     padding: 20px 30px;
 }
 
@@ -255,10 +329,10 @@ body {
     border: 1px solid #E3EAF3;
 }
 
-#btn-back {
+#btn-prev {
     color: var(--gray-2);
     position: absolute;
-    left: 00px;
+    left: 30px;
 }
 
 #btn-next {

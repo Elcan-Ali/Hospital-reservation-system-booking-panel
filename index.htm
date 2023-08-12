@@ -13,7 +13,7 @@
     <div id="booking-panel" class="flex">
         <div id="menu">
             <ul class="flex">
-                <li class="menu-item flex-items-center active">
+                <li class="menu-item flex-items-center">
                     <div class="menu-item-order flex-center">1</div>
                     <p>Staff</p>
                 </li>
@@ -38,39 +38,105 @@
             </div>
 
             <div id="stepper-page">
-                <div id="staff"></div>
-                <div id="services"></div>
-                <div id="date-time" class="flex">
-                    <div id="date">
-                        <h3>August</h3>
-                        <div id="calendar">
-                            <div id="calendar-top" class="flex">
-
+                <div id="staff" class="page"></div>
+                <div id="services" class="page"></div>
+                <div id="date-time-wrapper" class="page">
+                    <div id="date-time" class="flex">
+                        <div id="date">
+                            <h3>August</h3>
+                            <div id="calendar">
+                                <div id="calendar-top" class="flex">
+                                </div>
+                                <div id="calendar-bottom" class="flex"></div>
                             </div>
-                            <div id="calendar-bottom" class="flex"></div>
-
                         </div>
-                    </div>
-
-                    <div id="time">
-                        <h3>Time</h3>
-                        <div id="select-time">
-                            <div id="select-time-top">
-                                <h3>Select date</h3>
-                            </div>
-                            <div id="select-time-bottom">
+                        <div id="time">
+                            <h3>Time</h3>
+                            <div id="select-time">
+                                <div id="select-time-top">
+                                    <h3>Select date</h3>
+                                </div>
+                                <div id="select-time-bottom">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div id="confirm" class="page">
+                    <form id="confirm-form" class="flex">
+                        <div class="confirm-form-item">
+                            <h3>First name <span>*</span></h3>
+                            <div class="confirm-input">
+                                <input type="text" name="name">
+                            </div>
+                        </div>
+                        <div class="confirm-form-item">
+                            <h3>Last name <span>*</span></h3>
+                            <div class="confirm-input">
+                                <input type="text" name="name">
+                            </div>
+                        </div>
+                        <div class="confirm-form-item">
+                            <h3>E-mail <span>*</span></h3>
+                            <div class="confirm-input">
+                                <input type="email" name="email">
+                            </div>
+                        </div>
+                        <div class="confirm-form-item">
+                            <h3>Phone</h3>
+                            <div class="confirm-input">
+                                <input type="tel" name="name">
+                            </div>
+                        </div>
+                    </form>
 
-                <div id="stepper-footer">
-                    <button id="btn-back" class="btn flex-center">Back</button>
-                    <button id="btn-next" class="btn flex-center">Next</button>
+                    <div id="confirm-note">
+                        <h3 id="confirm-note-title">Note</h3>
+                        <ul>
+                            <li>
+                                <span>Staff:</span>
+                                Alexy Rosetta
+                            </li>
+                            <li>
+                                <span>Service:</span> Oral hygiene
+                            </li>
+                            <li>
+                                <span>Date:</span>
+                                2022-02-04/09:30-10:00
+                            </li>
+                            <li>
+                                <span>Total:</span>
+                                <span id="total">123$</span>
+                            </li>
+                        </ul>
+
+                    </div>
+
                 </div>
+            </div>
 
+            <div id="stepper-footer">
+                <button id="btn-prev" class="btn flex-center">Back</button>
+                <button id="btn-next" class="btn flex-center">Next</button>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <script>
@@ -82,7 +148,6 @@
             calendarTop.innerHTML = weeksDay.reduce((kod, item) => kod += `<div class="week-day">${item}</div>`, "")
             calendarBottom.innerHTML = Array(31).fill(null).reduce((kod, item, index) => kod += `<div class="month-day">
             <div class="flex-center">${index}</div></div>`, "")
-
 
         </script>
 
