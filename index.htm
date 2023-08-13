@@ -21,7 +21,7 @@
                     <div class="menu-item-order flex-center">2</div>
                     <p>Service</p>
                 </li>
-                <li class="menu-item flex-items-center">
+                <li class="menu-item  flex-items-center">
                     <div class="menu-item-order flex-center">3</div>
                     <p>Date & Time</p>
                 </li>
@@ -43,8 +43,8 @@
                 <div id="date-time-wrapper" class="page">
                     <div id="date-time" class="flex">
                         <div id="date">
-                            <div class="month-year flex-items-center" >
-                               
+                            <div class="month-year flex-center">
+
                             </div>
                             <div id="calendar">
                                 <div class="flex calendar-top">
@@ -59,6 +59,17 @@
                                     <h3>Select date</h3>
                                 </div>
                                 <div id="select-time-bottom">
+                                    <div class="select-time-items flex-items-center">
+                                        
+                                        <!-- <div class="select-time-item checked flex">
+                                            <span>09:00</span>
+                                            <span>09:30</span>
+                                        </div>
+                                        <div class="select-time-item flex">
+                                            <span>09:00</span>
+                                            <span>09:30</span>
+                                        </div> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -68,25 +79,25 @@
                     <form id="confirm-form" class="flex">
                         <div class="confirm-form-item">
                             <h3>First name <span>*</span></h3>
-                            <div class="confirm-input">
+                            <div class="confirm-input required">
                                 <input type="text" name="name">
                             </div>
                         </div>
                         <div class="confirm-form-item">
                             <h3>Last name <span>*</span></h3>
-                            <div class="confirm-input">
+                            <div class="confirm-input required" >
                                 <input type="text" name="name">
                             </div>
                         </div>
                         <div class="confirm-form-item">
                             <h3>E-mail <span>*</span></h3>
-                            <div class="confirm-input">
+                            <div class="confirm-input required">
                                 <input type="email" name="email">
                             </div>
                         </div>
                         <div class="confirm-form-item">
                             <h3>Phone</h3>
-                            <div class="confirm-input">
+                            <div class="confirm-input ">
                                 <input type="tel" name="name">
                             </div>
                         </div>
@@ -122,36 +133,6 @@
                 <button id="btn-next" class="btn flex-center">Next</button>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <script>
-            // const weeksDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-
-            // const calendarTop = document.querySelector(".calendar-top");
-            // const calendarBottom = document.querySelector(".calendar-bottom");
-
-            // calendarTop.innerHTML = weeksDay.reduce((kod, item) => kod += `<div class="week-day">${item}</div>`, "")
-            // calendarBottom.innerHTML = Array(31).fill(null).reduce((kod, item, index) => kod += `<div class="month-day">
-            // <div class="flex-center">${index+1}</div></div>`, "")
-
-        </script>
 
         <script type="module" src="./assets/js/index.js"></script>
 </body>

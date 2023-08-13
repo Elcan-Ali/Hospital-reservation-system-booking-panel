@@ -1,13 +1,11 @@
 import { data } from "./data/dummy-data.js"
-import render from "./utils/render.js"
-import staffItem from "./components/stafftems.js"
-import serviceItem from "./components/serviceItem.js"
-import Stepper from "./components/stepper.js"
+import Stepper from "./utils/stepper.js"
 import Calendar from "./components/calendar.js"
+import Renderer from "./utils/render.js"
 
-const { staff, services } = data
-const staffEl = document.querySelector("#staff")
-const serviceEl = document.querySelector("#services")
+
+const { date } = data
+
 const prevBtn = document.querySelector("#btn-prev")
 const nextBtn = document.querySelector("#btn-next")
 const pages = document.querySelectorAll(".page")
@@ -15,11 +13,16 @@ const menuItems = document.querySelectorAll(".menu-item")
 
 const pageStepper = new Stepper(pages)
 const menuStepper = new Stepper(menuItems)
-const calendar = new Calendar("#date-time-wrapper")
+const calendar = new Calendar("#date-time-wrapper", date)
+const renderer = new Renderer()
+
 
 pageStepper.show()
 menuStepper.show()
 calendar.show()
+renderer.show()
+
+
 
 
 
@@ -33,8 +36,6 @@ prevBtn.addEventListener("click", () => {
 })
 
 
-render(staffEl, staffItem, staff)
-render(serviceEl, serviceItem, services)
 
 
 
