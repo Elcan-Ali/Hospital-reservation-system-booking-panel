@@ -1,7 +1,6 @@
 import { data } from "../data/dummy-data.js"
 import { addChecked } from "../utils/addChecked.js"
 import { render } from "../utils/render.js"
-// import Renderer from "../utils/render.js"
 import Components from "./components.js"
 
 export default class Calendar {
@@ -14,12 +13,6 @@ export default class Calendar {
         this.month = this.today.getMonth()
         this.months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
         this.weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-    }
-
-    betterActiveDays() {
-        return {
-            days: this.activeDays.map(item => parseInt(item.slice(-2)))
-        }
     }
 
     createMonth() {
@@ -58,7 +51,6 @@ export default class Calendar {
             days.push({ date: date.getDate(), month: date.getMonth(), year: date.getFullYear() })
         }
 
-
         const calendarBottom = document.querySelector(`${this.selector} .calendar-bottom`)
         let monthDays = Array.from({ length: firstDay.getDay() })
             .reduce((kod, _, index) => {
@@ -80,23 +72,16 @@ export default class Calendar {
                               <div class="flex-center" data-key="${index + 1}">${item.date}</div>
                         </div>`
                 }
-
             }, "")
 
-
         calendarBottom.innerHTML = monthDays
-
-
     }
-
-
 
     show() {
         this.createMonth()
         this.createTop()
         this.createBottom()
 
-        // const renderer = new Renderer()
         const { selecTimeItem } = new Components()
         const selectTimesEl = document.querySelector(".select-time-items")
         const anglePrev = document.querySelector(`${this.selector} .angle-prev`)
@@ -124,8 +109,5 @@ export default class Calendar {
 
         anglePrev.addEventListener('click', () => this.changeMonth(false))
         angleNext.addEventListener('click', () => this.changeMonth(true))
-
     }
-
-
 }
