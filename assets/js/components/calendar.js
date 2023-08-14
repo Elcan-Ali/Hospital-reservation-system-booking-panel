@@ -1,5 +1,7 @@
 import { data } from "../data/dummy-data.js"
-import Renderer from "../utils/render.js"
+import { addChecked } from "../utils/addChecked.js"
+import { render } from "../utils/render.js"
+// import Renderer from "../utils/render.js"
 import Components from "./components.js"
 
 export default class Calendar {
@@ -94,7 +96,7 @@ export default class Calendar {
         this.createTop()
         this.createBottom()
 
-        const renderer = new Renderer()
+        // const renderer = new Renderer()
         const { selecTimeItem } = new Components()
         const selectTimesEl = document.querySelector(".select-time-items")
         const anglePrev = document.querySelector(`${this.selector} .angle-prev`)
@@ -115,8 +117,8 @@ export default class Calendar {
         activeClickableDays.forEach((item, index) => {
             item.addEventListener("click", () => {
                 selectDate.innerHTML = item.getAttribute("data-key")
-                renderer.render(".select-time-items", selecTimeItem, times)
-                renderer.addChecked(".select-time-item")
+                render(".select-time-items", selecTimeItem, times)
+                addChecked(".select-time-item")
             })
         })
 
