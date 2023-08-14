@@ -305,7 +305,8 @@ body {
 
 #confirm-form {
     flex-wrap: wrap;
-    gap: 25px 20px
+    gap: 25px 20px;
+    position: relative
 }
 
 #confirm-form .confirm-form-item h3 {
@@ -367,6 +368,48 @@ body {
 
 }
 
+#confirm-modal-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 9;
+    background-color: #c4c6c877;
+    display: none;
+}
+
+#confirm-modal-wrapper.active {
+    display: block;
+}
+
+#confirm-modal {
+    left:50%;
+    top: 50%;
+    gap: 17px;
+    width: 500px;
+    height: 161px;
+    flex-shrink: 0;
+    padding: 21px 23px;
+    position: absolute;
+    border-radius: 8px;
+    background-color: #fff;
+    transform: translate(-50%,-50%);
+}
+
+#confirm-modal span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#confirm-modal-wrapper p {
+    color: #F39C12;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#confirm-modal-wrapper.success p {
+    color: #38CF78;
+}
+
 #stepper-footer {
     display: flex;
     justify-content: end;
@@ -377,6 +420,31 @@ body {
     left: 0;
     padding: 20px 30px;
 }
+
+
+
+#stepper-footer #error-box {
+    display: none;
+    border-radius: 2px;
+    position: absolute;
+    font-weight: 600;
+    text-transform: uppercase;
+    left: 50%;
+    height: 37px;
+    transform: translateX(-50%);
+    background: #F4BE6C;
+    padding: 9px 14px;
+    font-size: 12px;
+    gap: 10px;
+    color: #fff;
+}
+
+
+#stepper-footer #error-box.active {
+    display: flex;
+}
+
+
 
 .btn {
     height: 38px;
@@ -391,8 +459,13 @@ body {
 
 #btn-prev {
     color: var(--gray-2);
+    display: none;
     position: absolute;
     left: 30px;
+}
+
+#btn-prev.active {
+    display: flex;
 }
 
 #btn-next {

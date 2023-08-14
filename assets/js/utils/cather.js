@@ -7,7 +7,7 @@ export class Catcher {
 
     formValidation() {
         const inputs = document.querySelectorAll(".confirm-input.required input")
-        return [...inputs].some(item => console.log(item.value === ""))
+        return [...inputs].some(item => item.value.trim() === "")
     }
     
     validations() {

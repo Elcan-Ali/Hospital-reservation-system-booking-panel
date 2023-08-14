@@ -33,7 +33,7 @@
         </div>
         <div id="stepper">
             <div id="stepper-header" class="flex-between">
-                <h3>Staff</h3>
+                <h3>Select staff</h3>
                 <img src="./assets/img/cross.svg" alt="cross">
             </div>
 
@@ -42,6 +42,7 @@
                 <div id="services" class="page"></div>
                 <div id="date-time-wrapper" class="page">
                     <div id="date-time" class="flex">
+                        
                         <div id="date">
                             <div class="month-year flex-center">
 
@@ -60,15 +61,7 @@
                                 </div>
                                 <div id="select-time-bottom">
                                     <div class="select-time-items flex-items-center">
-                                        
-                                        <!-- <div class="select-time-item checked flex">
-                                            <span>09:00</span>
-                                            <span>09:30</span>
-                                        </div>
-                                        <div class="select-time-item flex">
-                                            <span>09:00</span>
-                                            <span>09:30</span>
-                                        </div> -->
+
                                     </div>
                                 </div>
                             </div>
@@ -80,32 +73,32 @@
                         <div class="confirm-form-item">
                             <h3>First name <span>*</span></h3>
                             <div class="confirm-input required">
-                                <input type="text" name="name">
+                                <input type="text" data-key="input" name="name">
                             </div>
                         </div>
                         <div class="confirm-form-item">
                             <h3>Last name <span>*</span></h3>
-                            <div class="confirm-input required" >
-                                <input type="text" name="name">
+                            <div class="confirm-input required">
+                                <input type="text" data-key="input" name="surname">
                             </div>
                         </div>
                         <div class="confirm-form-item">
                             <h3>E-mail <span>*</span></h3>
                             <div class="confirm-input required">
-                                <input type="email" name="email">
+                                <input type="email" data-key="input" name="email">
                             </div>
                         </div>
                         <div class="confirm-form-item">
                             <h3>Phone</h3>
                             <div class="confirm-input ">
-                                <input type="tel" name="name">
+                                <input type="tel" data-key="input" name="phone">
                             </div>
                         </div>
                     </form>
 
                     <div id="confirm-note">
                         <h3 id="confirm-note-title">Note</h3>
-                        <ul>
+                        <ul id="confirm-list">
                             <li>
                                 <span>Staff:</span>
                                 Alexy Rosetta
@@ -122,19 +115,34 @@
                                 <span id="total">123$</span>
                             </li>
                         </ul>
+                    </div>
 
+                    <div id="confirm-modal-wrapper" class="" >
+                        <div id="confirm-modal" class="flex-center">
+                            <span>
+                                <img src="./assets/img/cancel.svg" alt="close">
+                            </span>
+                            <p id="confirm-modal-message">
+                                Please, fill the all required fields!
+                            </p>
+                        </div>
                     </div>
 
                 </div>
-            </div>
 
+            </div>
             <div id="stepper-footer">
                 <button id="btn-prev" class="btn flex-center">Back</button>
+                <div id="error-box" class="flex-center">
+                    <img src="./assets/img/error.svg" alt="error">
+                    <h3 id="error-message">Select Date & Time</h3>
+                </div>
                 <button id="btn-next" class="btn flex-center">Next</button>
             </div>
         </div>
 
         <script type="module" src="./assets/js/index.js"></script>
+        <!-- <script type="module" src="./assets/js/qoja.js"></script> -->
 </body>
 
 </html>

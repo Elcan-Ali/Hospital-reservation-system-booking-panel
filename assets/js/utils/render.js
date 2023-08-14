@@ -1,7 +1,6 @@
-import { selecTimeItem } from "../components/selectTimeItem.js"
-import serviceItem from "../components/serviceItem.js"
-import staffItem from "../components/stafftems.js"
+
 import { data } from "../data/dummy-data.js"
+import Components from "../components/components.js"
 
 export default class Renderer {
 
@@ -24,22 +23,23 @@ export default class Renderer {
 
     addChecked(selector) {
         const elements = document.querySelectorAll(`${selector}`)
-        
         elements.forEach(item => item.addEventListener("click", () => {
-            elements.forEach(item=>item.classList.remove("checked"))
+            elements.forEach(item => item.classList.remove("checked"))
             item.classList.add("checked")
         }))
     }
 
     show() {
+        const { staffItem, serviceItem, selecTimeItem } = new Components()
         const { staff, services, times } = this.data
         this.render("#staff", staffItem, staff)
         this.render("#services", serviceItem, services)
-        this.render(".select-time-items", selecTimeItem, times)
         this.addChecked(".staff-item")
         this.addChecked(".service-item")
         this.addChecked(".select-time-item")
     }
 
 }
+
+
 

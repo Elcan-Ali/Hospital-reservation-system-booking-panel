@@ -1,3 +1,7 @@
+import { data } from "../data/dummy-data.js"
+import Renderer from "../utils/render.js"
+import Components from "./components.js"
+
 export default class Calendar {
     constructor(selector, activeDays) {
         this.selector = selector
@@ -41,49 +45,84 @@ export default class Calendar {
 
     createBottom() {
         const LastDay = new Date(this.year, this.month + 1, 0)
+        const firstDay = new Date(this.year, this.month, 1)
+        const days = []
+
+        for (let i = firstDay.getDate(); i <= LastDay.getDate(); i++) {
+            let date;
+            i == LastDay.getDate()
+                ? date = new Date(this.year, this.month + 1, 0)
+                : date = new Date(this.year, this.month + 1, i)
+            days.push({ date: date.getDate(), month: date.getMonth(), year: date.getFullYear() })
+        }
+
+
         const calendarBottom = document.querySelector(`${this.selector} .calendar-bottom`)
-        const monthDays = Array.from({ length: LastDay.getDate() })
+        let monthDays = Array.from({ length: firstDay.getDay() })
             .reduce((kod, _, index) => {
-                if (this.betterActiveDays().days.includes(index + 1)) {
+                return kod +=
+                    `<div class="month-day">
+                        <div class="flex-center"></div>
+                    </div>`
+            }, "")
+            + days.reduce((kod, item, index) => {
+                const checkTime = `${item.year}-${item.month < 10 ? `0${item.month}` : item.month}-${item.date < 10 ? `0${item.date}` : item.date}`
+                if (this.activeDays.includes(`${checkTime}`)) {
                     return kod +=
                         `<div class="month-day active">
-                     <div class="flex-center">${index + 1}</div>
-                </div>`
+                               <div class="flex-center" data-key="${checkTime}">${item.date}</div>
+                        </div>`
                 } else {
                     return kod +=
                         `<div class="month-day">
-                     <div class="flex-center">${index + 1}</div>
-                </div>`
+                              <div class="flex-center" data-key="${index + 1}">${item.date}</div>
+                        </div>`
                 }
-
 
             }, "")
 
+
         calendarBottom.innerHTML = monthDays
+
+
     }
+
+
 
     show() {
         this.createMonth()
         this.createTop()
         this.createBottom()
 
+        const renderer = new Renderer()
+        const { selecTimeItem } = new Components()
+        const selectTimesEl = document.querySelector(".select-time-items")
         const anglePrev = document.querySelector(`${this.selector} .angle-prev`)
         const angleNext = document.querySelector(`${this.selector} .angle-next`)
         const activeDays = document.querySelectorAll(`${this.selector} .month-day.active`)
 
         activeDays.forEach(item => {
-
             item.addEventListener("click", () => {
                 activeDays.forEach(item => item.classList.remove("checked"));
                 item.classList.add('checked');
             })
         });
 
+        const activeClickableDays = document.querySelectorAll(".month-day.active div")
+        const selectDate = document.querySelector("#select-time-top h3")
+        const { times } = data
+
+        activeClickableDays.forEach((item, index) => {
+            item.addEventListener("click", () => {
+                selectDate.innerHTML = item.getAttribute("data-key")
+                renderer.render(".select-time-items", selecTimeItem, times)
+                renderer.addChecked(".select-time-item")
+            })
+        })
 
         anglePrev.addEventListener('click', () => this.changeMonth(false))
         angleNext.addEventListener('click', () => this.changeMonth(true))
 
-        // console.log(this.betterActiveDays());
     }
 
 
